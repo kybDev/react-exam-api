@@ -7,6 +7,8 @@ const visitors = async (args, req) => {
     const size = +args.size;
     const startDate = args.startDate;
     const filter = args.filter;
+    const sortColumn = args.sortColumn;
+    const sortBy = args.sortBy;
 
     let lt, gte;
 
@@ -21,9 +23,7 @@ const visitors = async (args, req) => {
       case 'yesterday':
         gte = new Date(date.setDate(date.getDate() - 1));
         lt =  new Date(date.setDate(date.getDate() + 1));
-
         break;
-
       case 'lastWeek':
         gte = new Date(date.setDate(date.getDate() - 7));
         lt = new Date(date.setDate(date.getDate() + 7));
@@ -39,9 +39,6 @@ const visitors = async (args, req) => {
       $lte: lt
     };
 
-
-   
-
     if (pageNo < 0 || pageNo === 0) {
       throw new Error('invalid page number, should start with 1');
     }
@@ -51,10 +48,15 @@ const visitors = async (args, req) => {
     });
     const totalPages = Math.ceil(totalCount / size);
     const skip = size * (pageNo - 1);
+
+
+    const sortedColumn = {[sortColumn]: (sortBy==="DESC" ? -1 : 1) };
+
+
     const visits = await Visitor.find({
       createdAt: { ...dateFilter }
     })
-      .sort({ createdAt: -1 })
+      .sort({ ...sortedColumn })
       .skip(skip)
       .limit(size);
     const visitsResult = visits.map(result => {

@@ -19,11 +19,11 @@ type VisitList {
 
 
 type RootQuery {
-    visitors(pageNo : Int!, size: Int!, startDate: String!, filter: String!) : VisitList!
+    visitors(pageNo : Int!, size: Int!, startDate: String!, filter: String!, sortColumn: String!, sortBy: String!) : VisitList!
 }
 
 type RootMutation {
-    visitorsV2(pageNo : Int!, size: Int!, startDate: String!, filter: String!) : VisitList!
+    visitorsV2(pageNo : Int!, size: Int!, startDate: String!, filter: String!, sortColumn: String!, sortBy: String!) : VisitList!
     createVisit(ip: String!, device: String!): Visitor
 }
 
