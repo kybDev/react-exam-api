@@ -19,7 +19,7 @@ const bookings = async (args, req) => {
   }
 
   try {
-    const bookings = await Booking.find().populate(['user', 'event']);
+    const bookings = await Booking.find({ user: req.userId }).populate(['user', 'event']);
     return bookings.map(booking => {
       return transformBooking(booking);
     });
