@@ -14,5 +14,5 @@ You will also see any lint errors in the console.
 
 
 ##### NOTE!
-Set your MongoDb Server at [https://github.com/kybDev/react-exam-api/blob/master/nodemon.json](MONGO_SERVER)
+Set your MongoDb Server at [MONGO_SERVER](https://github.com/kybDev/react-exam-api/blob/master/nodemon.json)
 
