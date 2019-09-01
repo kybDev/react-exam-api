@@ -1,7 +1,5 @@
 {
     "env": {
-        "MONGO_USR": "root",
-        "MONGO_PWD": "example",
         "MONGO_SERVER": "mongodb://localhost:27017/dbexample"
     }
 }
