@@ -20,6 +20,6 @@ If you dont have a MongoDB Server available and you have Docker installed in you
 OPTIONAL: <br>
 comment the volume if unuse
 ##### NOTE ON DOCKER WINDOWS:
-Set the full path where do you want to store the MongoDB volume in docker-compose.yml file the reason for this is that when you stop and run the docker-compose.yml it will load your previous records.
+Set the full path where do you want to store the MongoDB volume in docker-compose.yml file the reason for this is that when you stop and run the docker-compose.yml it will mount your previous records into the container.
 
 
