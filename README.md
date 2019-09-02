@@ -16,9 +16,10 @@ You will also see any lint errors in the console.
 Set your MongoDb Server at [MONGO_SERVER](https://github.com/kybDev/react-exam-api/blob/master/nodemon.json)
 
 If you dont have a MongoDB Server available and you have Docker installed in your local machine just run the docker-compose.yml file and your good to go.<br>
+
+OPTIONAL: <br>
+comment the volume if unuse
 ##### NOTE ON DOCKER WINDOWS:
-OPTIONAL: 
-comment the volume if unuse<br>
 Set the full path where do you want to store the MongoDB volume in docker-compose.yml file the reason for this is that when you stop and run the docker-compose.yml it will load your previous records.
 
 
